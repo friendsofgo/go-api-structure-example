@@ -28,3 +28,15 @@
 [prune]
   go-tests = true
   unused-packages = true
+
+[[constraint]]
+  name = "github.com/sirupsen/logrus"
+  version = "1.2.0"
+
+[[constraint]]
+  name = "github.com/graphql-go/graphql"
+  version = "0.7.6"
+
+[[constraint]]
+  name = "github.com/gorilla/mux"
+  version = "1.6.2"
