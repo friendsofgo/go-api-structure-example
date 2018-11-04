@@ -18,6 +18,34 @@
   version = "v1.6.2"
 
 [[projects]]
+  digest = "1:6b588a3e17f529ec6239042690ce79b07d752624779f953d46e49335108f4f02"
+  name = "github.com/graphql-go/graphql"
+  packages = [
+    ".",
+    "gqlerrors",
+    "language/ast",
+    "language/kinds",
+    "language/lexer",
+    "language/location",
+    "language/parser",
+    "language/printer",
+    "language/source",
+    "language/typeInfo",
+    "language/visitor",
+  ]
+  pruneopts = "UT"
+  revision = "5c1be0872a56fba73b279434ea95dfda735abedd"
+  version = "v0.7.6"
+
+[[projects]]
+  digest = "1:eeac0b32d8af13a48405ae34589bb2fc24ca0c39ee96fd94ca23f0cd1929fa36"
+  name = "github.com/graphql-go/handler"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "f0393b2c10daeebea900292b8e092e73475399d9"
+  version = "v0.2.1"
+
+[[projects]]
   digest = "1:0a69a1c0db3591fcefb47f115b224592c8dfa4368b7ba9fae509d5e16cdc95c8"
   name = "github.com/konsorten/go-windows-terminal-sequences"
   packages = ["."]
@@ -52,21 +80,14 @@
   pruneopts = "UT"
   revision = "9b800f95dbbc54abff0acf7ee32d88ba4e328c89"
 
-[[projects]]
-  branch = "master"
-  digest = "1:4f63d25be45429fb283ad099fe45231e0bc02731b5c820b62b076374eab4a1c2"
-  name = "golang.org/x/tools"
-  packages = ["cmd/getgo/server"]
-  pruneopts = "UT"
-  revision = "92b943e6bff73e0dfe9e975d94043d8f31067b06"
-
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
   input-imports = [
     "github.com/gorilla/mux",
+    "github.com/graphql-go/graphql",
+    "github.com/graphql-go/handler",
     "github.com/sirupsen/logrus",
-    "golang.org/x/tools/cmd/getgo/server",
   ]
   solver-name = "gps-cdcl"
   solver-version = 1

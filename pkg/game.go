@@ -2,11 +2,11 @@ package pkg
 
 // Game defines the properties of a game
 type Game struct {
-	ID string
-	Name string
-	ShortDscr string
-	Genre GameGenre
-	Status bool
+	ID          string    `json:"id"`
+	Name        string    `json:"name"`
+	Description string    `json:"description"`
+	Genre       GameGenre `json:"genre"`
+	Status      bool      `json:"status"`
 }
 
 // GameGenre defines the genres which can have a game
@@ -18,7 +18,7 @@ const (
 	AdventureGenre GameGenre = "adventure"
 
 	// ActionGenre define the action genre
-	ActionGenre ="action"
+	ActionGenre = "action"
 
 	// RolGenre define the rol genre
 	RolGenre = "rol"
@@ -26,3 +26,8 @@ const (
 	// ShooterGenre define the shooter genre
 	ShooterGenre = "shooter"
 )
+
+// GameRepository provides access to game repository
+type GameRepository interface {
+	Find(Game) ([]*Game, error)
+}
