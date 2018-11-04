@@ -13,6 +13,7 @@ import (
 
 	log "github.com/sirupsen/logrus"
 	"github.com/ubeep/go-api-structure-example/pkg/server"
+	"github.com/ubeep/go-api-structure-example/pkg/storage/inmem"
 )
 
 func main() {
@@ -26,7 +27,11 @@ func main() {
 	flag.Parse()
 	logger := logger()
 
-	srv := server.New(logger)
+	var (
+		gameRepository = inmem.NewGameRepository()
+	)
+
+	srv := server.New(gameRepository, logger)
 	errs := make(chan error, 2)
 	go func() {
 		logger.WithFields(log.Fields{"transport": "http", "address": httpAdr}).Info("listening")
