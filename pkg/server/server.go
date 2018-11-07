@@ -3,13 +3,13 @@ package server
 import (
 	"net/http"
 
+	"github.com/friendsofgo/go-api-structure-example/pkg"
+	"github.com/friendsofgo/go-api-structure-example/pkg/server/graphql/queries"
+	"github.com/friendsofgo/graphiql"
 	"github.com/gorilla/mux"
 	"github.com/graphql-go/graphql"
 	"github.com/graphql-go/handler"
 	log "github.com/sirupsen/logrus"
-	"github.com/ubeep/go-api-structure-example/pkg"
-	"github.com/ubeep/go-api-structure-example/pkg/server/graphql/queries"
-	"github.com/ubeep/graphiql"
 )
 
 // Server holds the dependencies for a HTTP server
@@ -26,7 +26,7 @@ func New(gR pkg.GameRepository, logger *log.Logger) *Server {
 		logger: logger,
 	}
 
-	graphiQL, err := graphiql.NewGraphiqlHandler("/graphql")
+	graphiqlHandler, err := graphiql.NewGraphiqlHandler("/graphql")
 	if err != nil {
 		s.logger.WithFields(
 			log.Fields{
@@ -38,7 +38,7 @@ func New(gR pkg.GameRepository, logger *log.Logger) *Server {
 
 	r := mux.NewRouter()
 	r.Use(accessControl)
-	r.HandleFunc("/graphiql", graphiQL.ServeHTTP)
+	r.Handle("/graphiql", graphiqlHandler)
 	s.GraphQLServer(r)
 	s.router = r
 

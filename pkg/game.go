@@ -29,5 +29,5 @@ const (
 
 // GameRepository provides access to game repository
 type GameRepository interface {
-	Find(Game) ([]*Game, error)
+	Find(ID string) ([]*Game, error)
 }

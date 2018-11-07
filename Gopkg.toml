@@ -42,5 +42,5 @@
   version = "1.6.2"
 
 [[constraint]]
-  branch = "master"
-  name = "github.com/mnmtanish/go-graphiql"
+  name = "github.com/friendsofgo/graphiql"
+  version = "0.1.0"
