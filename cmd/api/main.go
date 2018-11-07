@@ -11,15 +11,15 @@ import (
 	"os/signal"
 	"syscall"
 
+	"github.com/friendsofgo/go-api-structure-example/pkg/server"
+	"github.com/friendsofgo/go-api-structure-example/pkg/storage/inmem"
 	log "github.com/sirupsen/logrus"
-	"github.com/ubeep/go-api-structure-example/pkg/server"
-	"github.com/ubeep/go-api-structure-example/pkg/storage/inmem"
 )
 
 func main() {
 
 	var (
-		port    = os.Getenv("UBEEP_API_PORT")
+		port    = os.Getenv("FOG_API_PORT")
 		httpAdr = ":" + port
 		//inmemory = flag.Bool("inmem", false, "use in-memory repositories")
 	)
@@ -53,7 +53,7 @@ func logger() *log.Logger {
 	logger.SetFormatter(loggerFmt())
 	logger.SetOutput(os.Stdout)
 
-	lvl, err := log.ParseLevel(os.Getenv("UBEEP_LOG_LEVEL"))
+	lvl, err := log.ParseLevel(os.Getenv("FOG_LOG_LEVEL"))
 	if err != nil {
 		logger.SetLevel(log.ErrorLevel)
 		return logger
@@ -66,7 +66,7 @@ func logger() *log.Logger {
 
 func loggerFmt() log.Formatter {
 
-	if os.Getenv("UBEEP_ENV") == "development" {
+	if os.Getenv("FOG_ENV") == "development" {
 		formatter := new(log.TextFormatter)
 		formatter.FullTimestamp = true
 		return formatter

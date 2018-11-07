@@ -13,7 +13,7 @@ func Logger() *log.Logger {
 	logger.SetFormatter(loggerFmt())
 	logger.SetOutput(os.Stdout)
 
-	lvl, err := log.ParseLevel(os.Getenv("UBEEP_LOG_LEVEL"))
+	lvl, err := log.ParseLevel(os.Getenv("FOG_LOG_LEVEL"))
 	if err != nil {
 		logger.SetLevel(log.ErrorLevel)
 		return logger
@@ -26,7 +26,7 @@ func Logger() *log.Logger {
 
 func loggerFmt() log.Formatter {
 
-	if os.Getenv("UBEEP_ENV") == "development" {
+	if os.Getenv("FOG_ENV") == "development" {
 		formatter := new(log.TextFormatter)
 		formatter.FullTimestamp = true
 		return formatter

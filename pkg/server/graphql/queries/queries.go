@@ -1,8 +1,8 @@
 package queries
 
 import (
+	"github.com/friendsofgo/go-api-structure-example/pkg"
 	"github.com/graphql-go/graphql"
-	"github.com/ubeep/go-api-structure-example/pkg"
 )
 
 // GetRootFields returns all the available queries.

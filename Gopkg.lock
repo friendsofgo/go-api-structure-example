@@ -62,6 +62,14 @@
   version = "v1.2.0"
 
 [[projects]]
+  digest = "1:15c7f188e165913542d46a0289a7c840265f343e964966b237ff5d253240e002"
+  name = "github.com/friendsofgo/graphiql"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "4da44e3551f7b371818bbe9116d5a6024cc74d7a"
+  version = "v0.1.0"
+
+[[projects]]
   branch = "master"
   digest = "1:3f3a05ae0b95893d90b9b3b5afdb79a9b3d96e4e36e099d841ae602e4aca0da8"
   name = "golang.org/x/crypto"
@@ -88,6 +96,7 @@
     "github.com/graphql-go/graphql",
     "github.com/graphql-go/handler",
     "github.com/sirupsen/logrus",
+    "github.com/friendsofgo/graphiql",
   ]
   solver-name = "gps-cdcl"
   solver-version = 1

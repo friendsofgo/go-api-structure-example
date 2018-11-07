@@ -3,7 +3,7 @@ package inmem
 import (
 	"sync"
 
-	"github.com/ubeep/go-api-structure-example/pkg"
+	"github.com/friendsofgo/go-api-structure-example/pkg"
 )
 
 type gameRepository struct {
@@ -18,13 +18,13 @@ func NewGameRepository() pkg.GameRepository {
 	}
 }
 
-func (r *gameRepository) Find(g pkg.Game) ([]*pkg.Game, error) {
+func (r *gameRepository) Find(ID string) ([]*pkg.Game, error) {
 	r.mtx.Lock()
 	defer r.mtx.Unlock()
 
 	var values []*pkg.Game
-	for _, value := range values {
-		if value.ID == g.ID {
+	for _, value := range r.games {
+		if value.ID == ID {
 			values = append(values, value)
 		}
 	}
