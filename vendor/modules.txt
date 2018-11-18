@@ -1,0 +1,31 @@
+# github.com/friendsofgo/graphiql v0.1.0
+github.com/friendsofgo/graphiql
+# github.com/gorilla/context v1.1.1
+github.com/gorilla/context
+# github.com/gorilla/mux v1.6.2
+github.com/gorilla/mux
+# github.com/graphql-go/graphql v0.7.6
+github.com/graphql-go/graphql
+github.com/graphql-go/graphql/gqlerrors
+github.com/graphql-go/graphql/language/ast
+github.com/graphql-go/graphql/language/kinds
+github.com/graphql-go/graphql/language/parser
+github.com/graphql-go/graphql/language/printer
+github.com/graphql-go/graphql/language/source
+github.com/graphql-go/graphql/language/visitor
+github.com/graphql-go/graphql/language/location
+github.com/graphql-go/graphql/language/lexer
+github.com/graphql-go/graphql/language/typeInfo
+# github.com/graphql-go/handler v0.2.1
+github.com/graphql-go/handler
+# github.com/konsorten/go-windows-terminal-sequences v1.0.1
+github.com/konsorten/go-windows-terminal-sequences
+# github.com/sirupsen/logrus v1.2.0
+github.com/sirupsen/logrus
+# github.com/ubeep/go-api-structure-example v0.0.0-20181107192840-9d5e705b9135
+github.com/ubeep/go-api-structure-example/pkg/server
+# golang.org/x/crypto v0.0.0-20181030102418-4d3f4d9ffa16
+golang.org/x/crypto/ssh/terminal
+# golang.org/x/sys v0.0.0-20181031143558-9b800f95dbbc
+golang.org/x/sys/unix
+golang.org/x/sys/windows
